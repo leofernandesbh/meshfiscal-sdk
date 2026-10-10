@@ -1,0 +1,11 @@
+MeshFiscal SDK — MIT, copyright 2026 MeshFiscal contributors.
+
+Runtime dependency: openapi-fetch 0.17.0 (MIT), Copyright (c) Drew Powers.
+https://github.com/openapi-ts/openapi-typescript/tree/main/packages/openapi-fetch
+The dependency is distributed by npm with its own LICENSE; it is not bundled.
+
+Type generator: openapi-typescript 7.13.0 (MIT).
+https://github.com/openapi-ts/openapi-typescript
+Generated types describe the MeshFiscal public API. No proprietary fiscal
+engine, official XML/XSD, private certificate, fiscal record or GPL/AGPL asset
+is included in this package.

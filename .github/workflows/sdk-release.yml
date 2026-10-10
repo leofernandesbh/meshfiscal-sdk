@@ -1,0 +1,77 @@
+name: SDK release (public source, reviewed OIDC)
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Exact reviewed SDK version
+        type: string
+        required: true
+      sha256:
+        description: Exact tarball SHA-256 approved after the server compatibility matrix
+        type: string
+        required: true
+      publish:
+        description: Publish after owner approval and trusted-publisher setup
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: meshfiscal-sdk-release
+  cancel-in-progress: false
+jobs:
+  verify:
+    if: github.ref == 'refs/heads/main' && github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      RELEASE_VERSION: ${{ inputs.version }}
+      RELEASE_SHA256: ${{ inputs.sha256 }}
+      SDK_EVIDENCE_DIRECTORY: ${{ runner.temp }}/sdk-release
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .node-version
+      - run: npm install --global npm@11.21.0 --ignore-scripts
+      - run: npm ci --ignore-scripts
+      - run: npm run build && npm run typecheck && npm test
+      - run: npm run release:verify
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: sdk-release-${{ github.sha }}
+          path: ${{ runner.temp }}/sdk-release
+          if-no-files-found: error
+          retention-days: 30
+  publish:
+    if: inputs.publish
+    needs: verify
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    environment: npm-release
+    permissions:
+      contents: read
+      id-token: write
+      attestations: write
+    env:
+      RELEASE_VERSION: ${{ inputs.version }}
+      RELEASE_SHA256: ${{ inputs.sha256 }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .node-version
+      - run: npm install --global npm@11.21.0 --ignore-scripts
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: sdk-release-${{ github.sha }}
+          path: reviewed-sdk
+      - name: Require OIDC and exact reviewed package bytes
+        run: node tools/sdk/verify-release.mjs reviewed-sdk/sdk-evidence.json
+      - uses: actions/attest-build-provenance@977bb373ede98d70efdf65b84cb5f73e068dcc2a # v3
+        with:
+          subject-path: reviewed-sdk/*.tgz
+      - name: Publish through npm trusted publisher
+        run: npm publish reviewed-sdk/*.tgz --access public --provenance --ignore-scripts
+      - name: Verify registry integrity, signatures and provenance
+        run: node tools/sdk/verify-published.mjs reviewed-sdk/sdk-evidence.json

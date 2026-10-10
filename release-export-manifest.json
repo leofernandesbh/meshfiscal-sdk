@@ -1,0 +1,124 @@
+{
+  "version": 1,
+  "package": "@meshfiscal/sdk",
+  "sdkVersion": "0.1.0",
+  "repository": "git+https://github.com/leofernandesbh/meshfiscal-sdk.git",
+  "files": [
+    {
+      "path": "apps/sdk/package.json",
+      "sha256": "e525eb4e82ebada05f449fdfdf5cb1b0648eedf0f80e0c06b36d5c5d8e8b9dbb"
+    },
+    {
+      "path": "apps/sdk/README.md",
+      "sha256": "8665d8c0a4ece96bbe7397286362ad8905eace3535298f7b9b5a3e2144fede0c"
+    },
+    {
+      "path": "apps/sdk/LICENSE",
+      "sha256": "a4503fe563ea2681a5c3138efa927a7c9ae8e81aa4e0edff9dd89fff75bfae85"
+    },
+    {
+      "path": "apps/sdk/NOTICE",
+      "sha256": "6ca7725b2e5bc00f1ef44b0408dc99aae9feb2bc4bd4762ef250e2b7b9040b1c"
+    },
+    {
+      "path": "apps/sdk/CHANGELOG.md",
+      "sha256": "6b29e086bbd2e4724522d3b6d8c93465f7b30ce1490fc408056fa8fa8da71c66"
+    },
+    {
+      "path": "apps/sdk/compatibility.json",
+      "sha256": "65e772671d0be1dac5f0c05e1e26173ce45ee9ad8ff04cfc4b50528a4a4c710f"
+    },
+    {
+      "path": "apps/sdk/tsconfig.json",
+      "sha256": "242af3e1f3779a111bc90a79bc79f0ab77eaa00087a75ff764e1bfb55805b33d"
+    },
+    {
+      "path": "apps/sdk/tsconfig.esm.json",
+      "sha256": "101f7614240e2743a4a9f6783b5e5caa3626a051692e66238122a8695a06bed2"
+    },
+    {
+      "path": "apps/sdk/vitest.config.ts",
+      "sha256": "644563e8d7ddf231bccdbadf8acde7361243e1fb8cc4b57c57a489e0fc8a9548"
+    },
+    {
+      "path": "apps/sdk/src/index.ts",
+      "sha256": "981cbb53cf49e8bb7cfdc0de24d9fb60aca3c26192cf46d5d0f70987b2519b3e"
+    },
+    {
+      "path": "apps/sdk/src/generated/schema.ts",
+      "sha256": "66483be812e791162a27401ca0cd7534f46cc34d7996297e03212403e42e9638"
+    },
+    {
+      "path": "apps/sdk/src/generated/version.ts",
+      "sha256": "4916419b19d06b9ad7677078b38d76e851d961c7c31dc039598f2b151e10ed0d"
+    },
+    {
+      "path": "apps/sdk/test/client.test.ts",
+      "sha256": "f6d0eea640430360b96a57478c0c24169d7acbeff44675b270aa40ee71238b62"
+    },
+    {
+      "path": "apps/sdk/test/resilience.test.ts",
+      "sha256": "d98849a99a5bbe1c63acff1009fc57ad9b88ee81fa471db25a28e0c5bd30e42f"
+    },
+    {
+      "path": "apps/sdk/test/fixtures/webhook-signature-vectors.json",
+      "sha256": "369ee9f7bd4c9518e124f4c45b87f27911415d873e44a7035376c8457a7df3c1"
+    },
+    {
+      "path": "tools/sdk/build.mjs",
+      "sha256": "db846c6a655e27220fd0845580b3dd6cc03dd2b4cb7f2708780aea4a403aeeb6"
+    },
+    {
+      "path": "tools/sdk/pack.mjs",
+      "sha256": "3bc8fd46c75e9e65f479134852a4282d8fe89e07187fb32e9190d5722235652d"
+    },
+    {
+      "path": "tools/sdk/verify-release.mjs",
+      "sha256": "6d52fbfa7b8102ce7baf5c4727d2fff7ec412078a3cc447d8e7f2bf4884eb63b"
+    },
+    {
+      "path": "tools/sdk/verify-published.mjs",
+      "sha256": "7c5625d92ddb9834422af88c015e43df1a77058f46b64c0261ead326e384eed7"
+    },
+    {
+      "path": "tools/lib/process.mjs",
+      "sha256": "7ca3102633e785151bfdbfd1bf4de2a4089e66c220d98be142f6e673d02bd62c"
+    },
+    {
+      "path": "tsconfig.base.json",
+      "sha256": "53f2f9ee25f621f889ea820a81e4d9a2723bdfcce7ffc8cb797c46693e52f37a"
+    },
+    {
+      "path": ".node-version",
+      "sha256": "7e8a2fa94951112b894a3dbe3d05efef5e9263741fa49125f0a70f40fedab4cc"
+    },
+    {
+      "path": "openapi/meshfiscal-public-v1.openapi.json",
+      "sha256": "bc17af2c5a9d2ecffd59e0da08675e19355d1cf6187791e6a4aada68bd65b897"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "a4503fe563ea2681a5c3138efa927a7c9ae8e81aa4e0edff9dd89fff75bfae85"
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "6ca7725b2e5bc00f1ef44b0408dc99aae9feb2bc4bd4762ef250e2b7b9040b1c"
+    },
+    {
+      "path": "package.json",
+      "sha256": "a24d93c9a5096e7a47d8460d7cda7e0ee4916b13da696d0c9ef93d953d788f3b"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "8a214855711c77a38dad78c3ac02ee407b98dab728e887a4ccf3c2921fc5a2dc"
+    },
+    {
+      "path": "README.md",
+      "sha256": "dab7a56b5f29d9ee78c04ffa001753d5686793640255fd9e57dabfcd50de0c9c"
+    },
+    {
+      "path": ".github/workflows/sdk-release.yml",
+      "sha256": "b64b64be3114f0a5516b317d6f7e87ef48621a6619d3325978c0545d12ce7a2b"
+    }
+  ]
+}

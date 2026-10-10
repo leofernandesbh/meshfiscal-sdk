@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "sdkVersion": "0.1.0",
+  "openapiVersion": "3.0.3",
+  "contractVersions": ["1.0.0", "1.1.0"],
+  "serverVersions": ["0.1.0"],
+  "baselineServer": {
+    "contractVersion": "1.0.0",
+    "commit": "d47145eeeac11b064ec88bde6a0b50287d1665f5"
+  },
+  "nodeVersions": ["22.23.3", "24.19.0"],
+  "moduleFormats": ["esm", "commonjs"],
+  "owner": "MeshFiscal SDK",
+  "updatedAt": "2026-10-10"
+}

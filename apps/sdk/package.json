@@ -1,0 +1,55 @@
+{
+  "name": "@meshfiscal/sdk",
+  "version": "0.1.0",
+  "description": "Cliente HTTP tipado e server-side para a API MeshFiscal.",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=22.23.3 <23 || >=24.19.0 <25"
+  },
+  "main": "./dist/cjs/index.cjs",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.cts",
+        "default": "./dist/cjs/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist/esm/**/*.js",
+    "dist/esm/**/*.d.ts",
+    "dist/cjs/**/*.cjs",
+    "dist/cjs/**/*.d.cts",
+    "LICENSE",
+    "README.md",
+    "NOTICE",
+    "CHANGELOG.md",
+    "compatibility.json"
+  ],
+  "scripts": {
+    "build": "node ../../tools/sdk/build.mjs",
+    "test": "vitest run --config vitest.config.ts",
+    "test:coverage": "vitest run --coverage --config vitest.config.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "openapi-fetch": "0.17.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leofernandesbh/meshfiscal-sdk.git",
+    "directory": "apps/sdk"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "algorithm": "HMAC-SHA-256",
+  "version": "v1",
+  "vectors": [
+    {
+      "name": "ascii-canonical-envelope",
+      "timestamp": 1787313600,
+      "rawBody": "{\"id\":\"019bf7db-4770-7538-b7e3-552f329fa3d1\",\"type\":\"webhook.endpoint.test\",\"data\":{\"object\":{\"status\":\"test\"}}}",
+      "secret": "mfwsec_test_0123456789abcdefghijklmnopqrstuvwxyz",
+      "signature": "2510145be89ae8e65d092a6cc3a7de7cd456d8fbb52c709f10592939ec487389"
+    },
+    {
+      "name": "utf8-rotation-envelope",
+      "timestamp": 1787313660,
+      "rawBody": "{\"id\":\"019bf7db-4770-7538-b7e3-552f329fa3d2\",\"type\":\"sandbox.operation.succeeded\",\"data\":{\"object\":{\"message\":\"ação concluída\",\"amount\":\"1234.56\"}}}",
+      "secret": "mfwsec_rotation_ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abc",
+      "signature": "80f9eaa4c7dc38823162a74d6266e878887c35370517eb1e0fbbe1a4472d58f6"
+    }
+  ]
+}
