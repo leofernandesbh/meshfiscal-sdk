@@ -118,7 +118,7 @@
     },
     {
       "path": ".github/workflows/sdk-release.yml",
-      "sha256": "08cd0a4d4b1bbb614f54a69d3d32214d890f3d9b96f7c94fd981dd63239f3462"
+      "sha256": "a291641e744fae8651009061b54460e2b575783e7bd00309b9b15c3366fd7ba1"
     }
   ]
 }

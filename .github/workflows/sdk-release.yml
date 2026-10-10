@@ -73,6 +73,6 @@ jobs:
         with:
           subject-path: reviewed-sdk/*.tgz
       - name: Publish through npm trusted publisher
-        run: npm publish reviewed-sdk/*.tgz --access public --provenance --ignore-scripts
+        run: npm publish ./reviewed-sdk/*.tgz --access public --provenance --ignore-scripts
       - name: Verify registry integrity, signatures and provenance
         run: node tools/sdk/verify-published.mjs reviewed-sdk/sdk-evidence.json
