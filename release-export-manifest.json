@@ -78,7 +78,7 @@
     },
     {
       "path": "tools/sdk/verify-published.mjs",
-      "sha256": "7c5625d92ddb9834422af88c015e43df1a77058f46b64c0261ead326e384eed7"
+      "sha256": "094c1d92f7105bc8b8b9b1897cc246ae932e8985078727ebac985ff5a9203d74"
     },
     {
       "path": "tools/lib/process.mjs",
@@ -118,7 +118,7 @@
     },
     {
       "path": ".github/workflows/sdk-release.yml",
-      "sha256": "a291641e744fae8651009061b54460e2b575783e7bd00309b9b15c3366fd7ba1"
+      "sha256": "22efabc700efcf7c86461e8d4c9c6705e74d4d8f926ebdca7a5f888b4a5efd3e"
     }
   ]
 }
